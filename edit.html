@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Client - Edit Draft Mail</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <!-- Edit Draft Mail Page -->
+    <div id="edit-draft-mail">
+        <h1>Edit Draft Mail</h1>
+        <input type="text" placeholder="From" id="edit-from">
+        <input type="text" placeholder="To" id="edit-to">
+        <textarea placeholder="Message" id="edit-message"></textarea>
+        <button onclick="saveEditedDraft()">Save</button>
+        <button onclick="sendEditedMail()">Send</button>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        // Call populateEditFields when window loads
+        window.onload = function() {
+            populateEditFields();
+        };
+    </script>
+</body>
+</html>

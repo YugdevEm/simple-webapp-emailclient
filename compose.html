@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Client - Compose Mail</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div id="compose-mail">
+        <h1>Compose Mail</h1>
+        <input type="text" placeholder="From" id="from">
+        <input type="text" placeholder="To" id="to">
+        <textarea placeholder="Message" id="message" style="width: calc(100% - 22px); height: 200px;"></textarea> <!-- Adjusted width and height -->
+        <div class="button-container">
+            <button id="save-button" onclick="saveDraft()">Save</button>
+            <button id="send-button" onclick="sendMail()">Send</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

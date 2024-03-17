@@ -8,8 +8,8 @@ body {
 }
 
 .container {
-    width: 50vh; /* Set the width to be equal to half of the viewport height */
-    height: 50vh; /* Set the height to be equal to half of the viewport height */
+    width: 50vh;
+    height: 50vh; 
 }
 
 #draft-mails {
@@ -19,7 +19,7 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    height: 100%; /* Adjusted */
+    height: 100%;
 }
 
 h1 {
@@ -37,8 +37,8 @@ h1 {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center vertically */
-    align-items: center; /* Center horizontally */
+    justify-content: center;
+    align-items: center; 
 }
 
 .draft-item {
@@ -85,5 +85,5 @@ h1 {
     text-align: center;
     color: #999;
     margin-top: 20px;
-    /* Display by default */
+    
 }

@@ -1,5 +1,4 @@
-// JavaScript Code
-// Simulated data
+
 let sentMails = JSON.parse(localStorage.getItem('sentMails')) || [];
 let draftMails = JSON.parse(localStorage.getItem('draftMails')) || [];
 
@@ -56,7 +55,7 @@ function sendMail() {
 function editDraft(index) {
     let mail = draftMails[index];
     localStorage.setItem('editDraftIndex', index);
-    localStorage.setItem('editDraft', JSON.stringify(mail)); // Store the draft for editing
+    localStorage.setItem('editDraft', JSON.stringify(mail)); 
     window.location.href = 'edit.html';
 }
 
@@ -78,19 +77,15 @@ function sendEditedMail() {
     let to = document.getElementById('edit-to').value;
     let message = document.getElementById('edit-message').value;
 
-    // Update the draftMails array with the edited data
     draftMails[index] = { from, to, message };
     localStorage.setItem('draftMails', JSON.stringify(draftMails));
 
-    // Send the edited mail
     sentMails.push({ from, to, message });
     localStorage.setItem('sentMails', JSON.stringify(sentMails));
 
-    // Remove the edited draft from the draft list
     draftMails.splice(index, 1);
     localStorage.setItem('draftMails', JSON.stringify(draftMails));
 
-    // Redirect to index.html
     window.location.href = 'index.html';
 }
 
@@ -107,7 +102,6 @@ function sendDraft(index) {
     window.location.href = 'index.html';
 }
 
-// Populate fields with draft data
 function populateEditFields() {
     let editDraft = JSON.parse(localStorage.getItem('editDraft'));
     if (editDraft) {
@@ -120,9 +114,8 @@ function populateEditFields() {
 window.onload = function() {
     if (location.href.endsWith('index.html')) {
         showSentMails();
-    } else if (location.href.endsWith('compose.html')) {
-        // Additional setup for compose.html if needed
-    } else if (location.href.endsWith('drafts.html')) {
+    } 
+    else if (location.href.endsWith('drafts.html')) {
         showDraftMails();
     } else if (location.href.endsWith('edit.html')) {
         let index = localStorage.getItem('editDraftIndex');

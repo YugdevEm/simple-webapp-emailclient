@@ -56,6 +56,7 @@ function editDraft(index) {
     let mail = draftMails[index];
     localStorage.setItem('editDraftIndex', index);
     localStorage.setItem('editDraft', JSON.stringify(mail)); 
+    
     window.location.href = 'edit.html';
 }
 

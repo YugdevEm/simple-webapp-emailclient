@@ -52,6 +52,47 @@ function sendMail() {
     window.location.href = 'index.html';
 }
 
+function validateAndPerformAction() {
+    let to=document.getElementById('to').value
+    let from=document.getElementById('from').value
+
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(emailPattern.test(to) && emailPattern.test(from)){
+        let button=document.getElementById('save-button')
+        if(button.innerText==='Save'){
+            saveDraft();
+        }
+        else{
+            sendMail();
+        }
+    }
+        else{
+            alert("enter a valid email address!!")
+        }
+    }
+
+function validationInEdit(){
+    let to=document.getElementById('edit-to').value
+    let from=document.getElementById('edit-from').value
+
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(emailPattern.test(to) && emailPattern.test(from)){
+        let button=document.getElementById('save-buton')
+        if(button.innerText==='Save'){
+            saveEditedDraft();
+        }
+        else{
+            sendEditedMail();
+        }
+    }
+        else{
+            alert("enter a valid email address!!")
+        }
+    }
+
+
 function editDraft(index) {
     let mail = draftMails[index];
     localStorage.setItem('editDraftIndex', index);
